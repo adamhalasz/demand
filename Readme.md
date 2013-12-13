@@ -10,9 +10,9 @@ Form error handling for `dietjs`
 - If `request.passed` is true than the form request has passed
 - If `request.passed` is false then `request.errors` contains the errors in JSON
 - You can answer if 
-	- `request.passed` with `request.success(objectResponse)`
-	- else `request.passed` with `request.error(objectResponse)` 
-	- *objectResponse* is optional
+	- `request.passed` with `response.success(data)`
+	- else with `response.error(data)` 
+	- *data* is optional
 
 ### Example
 When a `POST` request comes in (from a form or ajax request) with these parameters:
@@ -30,18 +30,24 @@ You can check is everything is ok with the submitted data with `request.check`:
 var app = new Application(options);
 
 app.get('/login', function(request, response, mysql){
-	request.demand('account', 'username').length(0,40);
-	request.demand('account', 'password').length(0,40);
-	request.demand('remain_logged_in').isBoolean().length(0,1);
+	// DEMAND values to be specific
+	request.demand('username').length(0,40);
+	request.demand('email').length(0,40).isEmail();
+	request.demand('password').length(0,40).is(request.body.password_again);
+	request.demand('options', 'remain_logged_in').isBoolean().length(0,1);
+	
+	// IF request has passed 
 	if(request.passed){ 
-		response.success();
+		response.success(); 
+		mysql.end();
 	} else {
 		response.error();
+		mysql.end();
 	}
 });
 ```
 
-### Check Functions
+### Demand Functions
 - **is**			
 	- for: regex			
 	- notes: match value against a regex
@@ -82,11 +88,28 @@ app.get('/login', function(request, response, mysql){
 	- for: `rang`			
 	- example: `0,50`
 
-### Version History
+### Register Errors
+- `request.error(field, message)` - both attributes are `required`
 
-#### v0.1.1 
-- Echo added to arguments for multi language `isset checking`
-- Bug Fixes
+### Respond with JSON
+- `response.success(data)` 
+	- the default response value is `{ passed: true, errors: false}`
+  	- `data` is appended to the default json response but it's `optional`
+- `response.error(data)` 
+	- the default response value is `{ passed: false, errors: [...]}`
+  	- `data` is appended to the default json response but it's `optional`
+  	- `errors` contain a list of erros with
+  	
+
+### Version History
+#### v0.2
+- `added`: request.error(field, message) 
+- `added`: response.success(data) 
+- `added`: response.error(data) 
+
+#### v0.1.5 
+- `added` Echo to arguments for multi language `isset demading`
+- Several Bug Fixes
 
 #### v0.1
 - First Release
