@@ -1,0 +1,18 @@
+{
+	"name" : "demand",
+	"version": "v0.0.1",
+	"description": "Form error handling for dietjs",
+	"keywords": ["form", "error", "error handling", "form handling", "value testing", "form testing", "data checking", "form checking", "error routing", "route", "errors"],
+	"bugs" : { 
+		"url" : "http://github.com/adamhalasz/demand/issues"
+	, "email" : "mail@adamhalasz.com"
+	},
+	"license": "MIT",
+	"author" : {
+		"name"	: "Halász Ádám",
+		"email"	: "mail@adamhalasz.com",
+		"url"	:"http://adamhalasz.com/"
+	},
+	"main" : "index.js",
+	"engines" : { "node" : ">=0.8.21" }
+}
