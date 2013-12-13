@@ -16,7 +16,7 @@ Form error handling for `dietjs`
 
 ### Example
 When a `POST` request comes in (from a form or ajax request) with these parameters:
-```
+```javascript
 	{
 		'account':{
 			username:'adam',
@@ -26,7 +26,7 @@ When a `POST` request comes in (from a form or ajax request) with these paramete
 	}
 ```
 You can check is everything is ok with the submitted data with `request.check`:
-```
+```javascript
 var app = new Application(options);
 
 app.get('/login', function(request, response, mysql){
