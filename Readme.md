@@ -38,10 +38,10 @@ app.get('/login', function(request, response, mysql){
 	
 	// IF request has passed 
 	if(request.passed){ 
-		response.success(); 
+		response.success(); // { passed: true, errors: false}
 		mysql.end();
 	} else {
-		response.error();
+		response.error(); // { passed: true, errors: [{..},{..}]}
 		mysql.end();
 	}
 });
