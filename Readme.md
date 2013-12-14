@@ -50,11 +50,11 @@ app.get('/login', function(request, response, mysql){
 ### Demand Functions
 
 
-Function | Condition | Notes | Example
+Function | Condition | Example | Use Case
 --- | --- | --- | ---
-`is` | **regex** `/([0-9]+)/i` | match value against a regex | `request.demand('id').is(/([0-9]+)/i)`
-`isset` | **defined** | check if value exists | `request.demand('message').isset()`
-`isArray` | **array** `[1,3,5,7]` | check if value is an array | `request.demand('users').isArray()`
+`is` | **regex** `/([0-9]+)/i` | `/([0-9]+)/i` | `request.demand('id').is(/([0-9]+)/i)`
+`isset` | **defined** | `undefined` vs `hell world` | `request.demand('message').isset()`
+`isArray` | **array** | `[1,3,5,7]` | `request.demand('users').isArray()`
 
 
 - **is**			
