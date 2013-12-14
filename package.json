@@ -1,6 +1,6 @@
 {
 	"name" : "demand",
-	"version": "v0.0.1",
+	"version": "v0.0.2",
 	"description": "Form error handling for dietjs",
 	"keywords": ["form", "error", "error handling", "form handling", "value testing", "form testing", "data checking", "form checking", "error routing", "route", "errors"],
 	"bugs" : { 

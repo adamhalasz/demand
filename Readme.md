@@ -25,7 +25,7 @@ When a `POST` request comes in (from a form or ajax request) with these paramete
 		'remain_logged_in': true
 	}
 ```
-You can check is everything is ok with the submitted data with `request.check`:
+You can check if everything is ok with the submitted data with `request.check`:
 ```javascript
 var app = new Application(options);
 
@@ -33,7 +33,7 @@ app.get('/login', function(request, response, mysql){
 	// DEMAND values to be specific
 	request.demand('username').length(0,40);
 	request.demand('email').length(0,40).isEmail();
-	request.demand('password').length(0,40).is(request.body.password_again);
+	request.demand('password').length(0,40).equals(request.body.password_again);
 	request.demand('options', 'remain_logged_in').isBoolean().length(0,1);
 	
 	// IF request has passed 
@@ -85,8 +85,12 @@ app.get('/login', function(request, response, mysql){
 	- example: `http://example.com/?p=10`
 	
 - **length**		
-	- for: `rang`			
+	- for: `range`			
 	- example: `0,50`
+	
+- **equals**		
+	- for: `matching values`			
+	- example: `request.demand('a').equals('b') -> false`
 
 ### Register Errors
 - `request.error(field, message)` - both attributes are `required`
