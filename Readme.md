@@ -49,7 +49,6 @@ app.get('/login', function(request, response, mysql){
 
 ### Demand Functions
 
-
 Function | Condition | Example | Use Case
 --- | --- | --- | ---
 `is` | **regex** | `/([0-9]+)/i` | `request.demand('id').is(/([0-9]+)/i)`
@@ -64,52 +63,6 @@ Function | Condition | Example | Use Case
 `isURL` | **url** | `http://example.com/?p=10` | `request.demand('personal_blog').isUrl()`
 `length` | **range** | `hello` is `4` | `request.demand('tweet').length(0, 140)`
 `equals` | **comparison** | comparing value `a` with `b` | `request.demand('agree').equals('true')`
-
-
-- **is**			
-	- for: regex			
-	- notes: match value against a regex
-	
-- **isset**		
-	- for: `not empty`
-	
-	
-- **isArray**			
-	- for: `array`	
-	- - example: `[1,3,5,7]`
-		
-- **isNumber**		
-	- for: `integer`
-	
-- **isBoolean**		
-	- for: `boolean`
-	
-- **isText**		
-	- for: `alpha`			
-	- notes: `A simple text`
-	
-- **isString**		
-	- for: `string`
-	
-- **isSlug** 		
-	- for: `no whitespace`	
-	- example: `string_like_this_007`
-	
-- **isEmail**		
-	- for: `email`		
-	- example: `me@email.com`
-	
-- **isURL**			
-	- for: `url`				
-	- example: `http://example.com/?p=10`
-	
-- **length**		
-	- for: `range`			
-	- example: `0,50`
-	
-- **equals**		
-	- for: `matching values`			
-	- example: `request.demand('agree').equals('true')`
 
 ### Register Errors
 - `request.error(field, message)` - both attributes are `required`
