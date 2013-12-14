@@ -50,10 +50,11 @@ app.get('/login', function(request, response, mysql){
 ### Demand Functions
 
 
-Markdown | Less | Pretty
+Function | Condition | Notes | Example
 --- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+`is` | **regex** `/([0-9]+)/i` | match value against a regex | `request.demand('id').is(/([0-9]+)/i)`
+`isset` | **defined** | check if value exists | `request.demand('message').isset()`
+`isArray` | **array** `[1,3,5,7]` | check if value is an array | `request.demand('users').isArray()`
 
 
 - **is**			
@@ -62,10 +63,11 @@ Markdown | Less | Pretty
 	
 - **isset**		
 	- for: `not empty`
-	- example: `[1,3,5,7]`
+	
 	
 - **isArray**			
 	- for: `array`	
+	- - example: `[1,3,5,7]`
 		
 - **isNumber**		
 	- for: `integer`
@@ -98,7 +100,7 @@ Markdown | Less | Pretty
 	
 - **equals**		
 	- for: `matching values`			
-	- example: `request.demand('a').equals('b') -> false`
+	- example: `request.demand('password').equals('password_again') -> false`
 
 ### Register Errors
 - `request.error(field, message)` - both attributes are `required`
