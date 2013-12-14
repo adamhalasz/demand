@@ -51,7 +51,7 @@ app.get('/login', function(request, response, mysql){
 
 
 Function | Condition | Notes | Example
---- | --- | ---
+--- | --- | --- | ---
 `is` | **regex** `/([0-9]+)/i` | match value against a regex | `request.demand('id').is(/([0-9]+)/i)`
 `isset` | **defined** | check if value exists | `request.demand('message').isset()`
 `isArray` | **array** `[1,3,5,7]` | check if value is an array | `request.demand('users').isArray()`
