@@ -48,6 +48,14 @@ app.get('/login', function(request, response, mysql){
 ```
 
 ### Demand Functions
+
+| Function        | For           | Example  | Notes           |
+| --------------- |:-------------:| ------- :| -------------- :|
+| is      | regex | $1600 |
+| isset      | centered      |   $12 |
+| isArray | are neat      |    $1 |
+
+
 - **is**			
 	- for: regex			
 	- notes: match value against a regex
