@@ -3,7 +3,6 @@ Form error handling for `dietjs`
 
 ### How it works?
 - You can demand `request.body[..]` values to match criterias like existence, length etc.. 
-- The module is included in the App module
 - The module is accessible in every `POST` request
 - The module can be accessed with the `request.demand` function
 - The module accepts unlimited agruments, each argument by right goes deeper in `request.body`
