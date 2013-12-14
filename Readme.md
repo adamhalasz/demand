@@ -52,7 +52,10 @@ app.get('/login', function(request, response, mysql){
 
 Function | Condition | Example | Use Case
 --- | --- | --- | ---
-`is` | **regex** | `/([0-9]+)/i` | ```javascript request.demand('id').is(/([0-9]+)/i)```
+`is` | **regex** | `/([0-9]+)/i` | 
+```javascript 
+request.demand('id').is(/([0-9]+)/i)
+```
 `isset` | **defined** | `undefined` vs `hell world` | `request.demand('message').isset()`
 `isArray` | **array** | `[1,3,5,7]` | `request.demand('users').isArray()`
 
