@@ -49,11 +49,11 @@ app.get('/login', function(request, response, mysql){
 
 ### Demand Functions
 
-| Function        | For           | Example  | Notes           |
-| --------------- |:-------------:| ------- :| -------------- :|
-| is      | regex | $1600 |
-| isset      | centered      |   $12 |
-| isArray | are neat      |    $1 |
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 
 
 - **is**			
