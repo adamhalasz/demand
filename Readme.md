@@ -55,6 +55,15 @@ Function | Condition | Example | Use Case
 `is` | **regex** | `/([0-9]+)/i` | `request.demand('id').is(/([0-9]+)/i)`
 `isset` | **defined** | `undefined` vs `hell world` | `request.demand('message').isset()`
 `isArray` | **array** | `[1,3,5,7]` | `request.demand('users').isArray()`
+`isNumber` | **integer** | `8080` | `request.demand('birth_day').isNumber()`
+`isBoolean` | **boolean** | `true` or `false` | `request.demand('agree').isBoolean()`
+`isText` | **alpha** | `A simple text` | `request.demand('username').isText()`
+`isString` | **string** | `52 people likes you today!` | `request.demand('message').isString()`
+`isSlug` | **slug** | `seomthing_like_this_842` | `request.demand('username').isSlug()`
+`isEmail` | **email** | `me@email.com` | `request.demand('email').isEmail()`
+`isURL` | **url** | `http://example.com/?p=10` | `request.demand('personal_blog').isUrl()`
+`length` | **range** | `hello` is `4` | `request.demand('tweet').length(0, 140)`
+`equals` | **comparison** | comparing value `a` with `b` | `request.demand('agree').equals('true')`
 
 
 - **is**			
@@ -100,7 +109,7 @@ Function | Condition | Example | Use Case
 	
 - **equals**		
 	- for: `matching values`			
-	- example: `request.demand('password').equals('password_again') -> false`
+	- example: `request.demand('agree').equals('true')`
 
 ### Register Errors
 - `request.error(field, message)` - both attributes are `required`
